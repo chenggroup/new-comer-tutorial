@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#BSUB -q large
+#BSUB -W 24:00
+#BSUB -J train
+#BSUB -o %J.stdout
+#BSUB -e %J.stderr
+#BSUB -n 4
+#BSUB -R "span[ptile=4]"
+
+# add modulefiles
+module add deepmd/1.2
+
+source /share/base/tools/export_visible_devices
+
+dp train input.json 1>> train.log 2>> train.err
