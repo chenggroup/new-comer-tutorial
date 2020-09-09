@@ -1,0 +1,18 @@
+workflow: GeooptSingleWorkChain
+webhook: https://oapi.dingtalk.com/robot/send?access_token=xxx
+resdir: results
+structure: Hydronium_PT.xyz 
+cell:
+  - 10
+  - 10
+  - 20
+pbc: false
+metadata:
+  config: config.yaml
+  kind_section:
+    H:
+      BASIS_SET: DZVP-MOLOPT-SR-GTH
+      POTENTIAL: GTH-PBE-q1
+    O:
+      BASIS_SET: DZVP-MOLOPT-SR-GTH
+      POTENTIAL: GTH-PBE-q6
